@@ -1,0 +1,17 @@
+<div class="container mt-4" *ngIf="product">
+  <div class="card p-3 shadow">
+    <div class="row">
+      <div class="col-md-5 text-center">
+        <img [src]="product.image" class="img-fluid rounded" alt="Product" />
+      </div>
+      <div class="col-md-7">
+        <h2>{{ product.title }}</h2>
+        <p class="text-muted">{{ product.category }}</p>
+        <h3 class="text-success">{{ product.price | currency }}</h3>
+         <h3 class="text-success">{{ product.price | toKHR }}</h3>
+        <p>{{ product.description }}</p>
+        <button class="btn btn-warning mt-2" (click)="addToCart">Add to Cart 🛒</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.navbar-brand {
+  font-family: Montserrat;
+  font-size: 30px;
+  font: weight 15px;
+}
+.nav-link {
+  font-size: 20px;
+}
+.menu-link {
+  /* color: #f8f9fa !important; */
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Hover effect */
+.menu-link:hover {
+  background-color: #198754;
+  color: #212529 !important;
+}

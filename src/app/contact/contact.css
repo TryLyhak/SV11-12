@@ -1,0 +1,26 @@
+.contact-page h2 {
+  font-weight: 700;
+  color: #222;
+}
+
+.contact-page p {
+  font-size: 15px;
+}
+
+.card {
+  border-radius: 12px;
+  border: none;
+}
+
+.card h4,
+.card h5 {
+  font-weight: 600;
+}
+
+.map-container iframe {
+  border-radius: 12px;
+}
+
+button.btn-primary {
+  border-radius: 8px;
+}

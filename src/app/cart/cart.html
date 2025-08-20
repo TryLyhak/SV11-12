@@ -1,0 +1,81 @@
+<div class="container cart-container">
+  <h3 class="mb-4">🛒 Your Cart</h3>
+
+  <div *ngIf="cartItems.length > 0; else emptyCart">
+    <!-- Select All Checkbox -->
+    <div class="form-check mb-3">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        [(ngModel)]="selectAllChecked"
+        (change)="toggleSelectAll()"
+        id="selectAll"
+      />
+      <label class="form-check-label" for="selectAll"> Select All </label>
+    </div>
+    <div
+      class="row align-items-center cart-item"
+      *ngFor="let item of cartItems; let i = index"
+    >
+      <!-- Checkbox -->
+      <div class="col-md-1 text-center">
+        <input
+          type="checkbox"
+          [(ngModel)]="item.selected"
+          (change)="calculateTotal()"
+        />
+      </div>
+      <div class="col-md-2 text-center">
+        <img [src]="item.image" alt="{{item.title}}" width="80" />
+      </div>
+      <div class="col-md-4">
+        <h6>{{item.title}}</h6>
+        
+        <p class="text-muted mb-0">ID: {{item.id}}</p>
+      </div>
+      <div
+        class="col-md-5 d-flex align-items-center justify-content-end cart-actions"
+      >
+        <span class="item-price">${{item.price}}</span>
+      </div>
+      <div class="col-md-2 text-center">
+        <input
+          type="number"
+          [(ngModel)]="item.quantity"
+          (change)="calculateTotal()"
+          class="form-control text-center mx-2 quantity-input"
+          min="1"
+        />
+      </div>
+      <div class="col-md-2 text-end">
+        <span class="item-subtotal"
+          >${{(item.price * (item.quantity || 1)).toFixed(2)}}</span
+        >
+        <button class="btn btn-sm btn-danger ms-2" (click)="removeItem(i)">
+          🥛
+        </button>
+      </div>
+    </div>
+
+    <!-- Total -->
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <button class="btn btn-outline-danger" (click)="clearCart()">
+          Clear
+        </button>
+      </div>
+      <div class="col-md-6 text-end total">Total: ${{total.toFixed(2)}}</div>
+    </div>
+
+    <!-- Checkout Button -->
+    <div class="text-end mt-3">
+      <button class="btn btn-success btn-lg" (click)="checkout()">
+        Pay Now
+      </button>
+    </div>
+  </div>
+
+  <ng-template #emptyCart>
+    <p class="text-center">🛍️ Your cart is empty</p>
+  </ng-template>
+</div>

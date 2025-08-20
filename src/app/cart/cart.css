@@ -1,0 +1,105 @@
+body {
+  background-color: #f1f3f6; /* Softer light gray for better contrast */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cart-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Softer shadow for modern look */
+}
+
+.cart-container h3 {
+  font-weight: 600;
+  color: #333;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee; /* softer divider */
+  gap: 15px; /* spacing between columns */
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px; /* slightly rounder for modern feel */
+}
+
+.cart-item h6 {
+  margin-bottom: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #222;
+}
+
+.cart-actions {
+  gap: 10px;
+}
+
+.item-price,
+.item-subtotal {
+  font-weight: 500;
+  min-width: 60px;
+  text-align: right;
+}
+
+.quantity-input {
+  width: 70px;
+}
+
+.cart-item p {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 0;
+}
+
+.cart-item input[type="number"] {
+  width: 70px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.cart-item .price-remove {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-item .price-remove span {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+}
+
+.cart-item .price-remove button {
+  padding: 5px 8px;
+  border-radius: 6px;
+}
+
+.total {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111;
+}
+
+button {
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}

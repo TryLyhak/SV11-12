@@ -1,0 +1,44 @@
+<!-- child -->
+<div class="col-md-3" style="float: left; padding: 5px">
+  <div class="card h-100">
+    <!-- {{ product | json }} -->
+    <div class="disound-badge">
+      <span class="badge bg-danger disound-badge">{{ product().category }}</span>
+    </div>
+     <!-- Clickable Image -->
+    <a [routerLink]="['/product', product().id]">
+      <img [src]="product().image" class="card-img-top pro-img" alt="Product" />
+    </a>
+
+    <div class="card-body">
+       <a [routerLink]="['/product', product().id]" class="text-decoration-none"></a>
+      <h5 class="card-title product-title">{{ product().title }}</h5>
+      <p
+        class="card-text badge"
+        style="
+          font-size: medium;
+          font-weight: bold;
+          background-color: yellow;
+          color: firebrick;
+        "
+      >
+        {{ product().price | currency }}
+      </p>
+      <p
+        class="card-text badge"
+        style="
+          font-size: medium;
+          font-weight: bold;
+          background-color: yellow;
+          color: firebrick;
+        "
+      >
+        {{ product().price | toKHR }}
+      </p>
+      <h6 class="card-title product-description">{{ product().description }}</h6>
+      <button class="btn btn-warning w-100" (click)="addToCart()">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</div>

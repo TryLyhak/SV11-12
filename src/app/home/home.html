@@ -1,0 +1,9 @@
+<div class="container-sm mt-2">
+  <app-slider></app-slider>
+
+  @for (item of products; track item) {
+  <!-- <a [routerLink]="['/product', item.id]"></a> -->
+  <app-product-card [product]="item"></app-product-card>
+  }
+  <!-- <div class="clearfix"></div> -->
+</div>
